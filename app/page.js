@@ -10,6 +10,7 @@ export default function Home() {
   return (
     <>
       <Snowfall
+        snowflakeCount={50}
         style={{
           position: 'fixed',
           width: '100vw',

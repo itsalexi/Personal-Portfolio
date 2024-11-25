@@ -40,10 +40,10 @@ const SideStaggerNavigation = () => {
       onMouseLeave={() => {
         mouseY.set(Infinity);
         setIsHovered(false);
-      }}
-      className="fixed right-0 top-0 flex h-screen flex-col items-end justify-between py-4 pl-8"
-    >
-      {Array.from(Array(NUM_LINES).keys()).map((i) => {
+            }}
+            className="fixed right-0 top-0 hidden h-screen flex-col items-end justify-between py-4 pl-8 md:flex"
+          >
+            {Array.from(Array(NUM_LINES).keys()).map((i) => {
         const linkContent = navItems.find((item) => item.position === i + 1);
 
         return (

@@ -3,6 +3,9 @@ import EnlistmentHelperImg from '@/assets/EnlistmentHelper.jpg';
 import QPICalcImg from '@/assets/QPICalc.png';
 import TuitionFeeImg from '@/assets/TuitionFee.png';
 import GithubImg from '@/assets/Github.png';
+import SharespaceImg from '@/assets/sharespace.png';
+import DiscordImg from '@/assets/discord.png';
+
 import Image from 'next/image';
 import {
   useDragControls,
@@ -136,6 +139,24 @@ export const ProjectsArea = () => {
       live: 'https://tuition.alexi.life',
       tech: ['HTML', 'CSS', 'React', 'NextJS', 'mobilefriendly'],
     },
+    Sharespace: {
+      image: SharespaceImg,
+      title: 'Sharespace',
+      description:
+        'A social media blogging platform like Medium and Dev.to! You have the ability to like, share, comment on every post!',
+      repo: 'https://github.com/itsalexi/Sharespace',
+      live: 'https://sharespace.alexi.life',
+      tech: ['HTML', 'CSS', 'React', 'Firebase', 'NextJS', 'mobilefriendly'],
+    },
+    DiscordClone: {
+      image: DiscordImg,
+      title: 'Discord Clone',
+      description:
+        'A discord clone with full authentication and realtime chat messaging powered by Firebase. Login/Register pages are mobile-friendly, but the main application is not. Still try it out!',
+      repo: 'https://github.com/itsalexi/Discord-Clone/',
+      live: 'https://alexi.life/projects/discord-clone/',
+      tech: ['HTML', 'CSS', 'React', 'Firebase', 'JavaScript'],
+    },
   };
   const openModal = (projectKey) => {
     setModalContent(projectData[projectKey]);
@@ -235,7 +256,41 @@ export const ProjectsArea = () => {
           </div>
         </BounceCard>
       </div>
-
+      <div className="grid grid-cols-12 gap-4 mt-4">
+        <BounceCard
+          className="col-span-12 md:col-span-6"
+          onClick={() => openModal('Sharespace')}
+        >
+          <CardTitle>Sharespace</CardTitle>
+          <p className="text-center">
+            A social media blogging platform like Medium and Dev.to!
+          </p>
+          <div className="absolute bottom-0 left-4 right-4 top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-violet-600 to-indigo-800 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
+            <Image
+              src={SharespaceImg}
+              alt="Sharespace"
+              className="w-full object-cover object-top rounded-t-2xl"
+            />
+          </div>
+        </BounceCard>
+        <BounceCard
+          className="col-span-12 md:col-span-6"
+          onClick={() => openModal('DiscordClone')}
+        >
+          <CardTitle>Discord Clone</CardTitle>
+          <p className="text-center">
+            A discord clone with full authentication and realtime chat
+            messaging!
+          </p>
+          <div className="absolute bottom-0 left-4 right-4 top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-violet-600 to-indigo-800 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
+            <Image
+              src={DiscordImg}
+              alt="Discord Clone"
+              className="w-full object-cover object-top rounded-t-2xl"
+            />
+          </div>
+        </BounceCard>
+      </div>
       {/* Modal */}
       <DragCloseDrawer open={isModalOpen} setOpen={setIsModalOpen}>
         <div className="mx-auto max-w-2xl space-y-4 text-neutral-400">
