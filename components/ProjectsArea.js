@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import EnlistmentHelperImg from '@/assets/EnlistmentHelper.jpg';
 import QPICalcImg from '@/assets/QPICalc.png';
 import TuitionFeeImg from '@/assets/TuitionFee.png';
@@ -12,6 +12,7 @@ import {
   useMotionValue,
   useAnimate,
   motion,
+  useInView,
 } from 'framer-motion';
 import useMeasure from 'react-use-measure';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
@@ -96,13 +97,14 @@ const DragCloseDrawer = ({ open, setOpen, children }) => {
 export const ProjectsArea = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
-
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
   const containerVariants = {
     initial: { opacity: 0 },
     animate: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.4,
       },
     },
   };
@@ -111,6 +113,7 @@ export const ProjectsArea = () => {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
   };
+
   const projectData = {
     QPICalc: {
       image: QPICalcImg,
@@ -165,8 +168,9 @@ export const ProjectsArea = () => {
 
   return (
     <motion.div
-      initial="initial"
-      animate="animate"
+      ref={containerRef}
+      initial="hidden"
+      animate={isInView ? 'visible' : 'hidden'}
       variants={containerVariants}
     >
       <motion.div
@@ -357,36 +361,42 @@ export const ProjectsArea = () => {
 };
 
 const BounceCard = ({ className, children, href, onClick }) => {
-  return (
-    <motion.div
-      variants={{
-        initial: {
-          scale: 0.5,
-          y: 50,
-          opacity: 0,
-        },
-        animate: {
-          scale: 1,
-          y: 0,
-          opacity: 1,
-        },
-      }}
-      transition={{
+  const cardRef = useRef(null);
+  const isInView = useInView(cardRef, { once: true, amount: 0.2 });
+  const cardVariants = {
+    hidden: {
+      scale: 0.5,
+      y: 50,
+      opacity: 0,
+    },
+    visible: {
+      scale: 1,
+      y: 0,
+      opacity: 1,
+      transition: {
         type: 'spring',
         mass: 3,
         stiffness: 400,
         damping: 50,
-      }}
+      },
+    },
+  };
+  return (
+    <motion.div
+      ref={cardRef}
+      variants={cardVariants}
+      initial="hidden"
+      animate={isInView ? 'visible' : 'hidden'}
       whileHover={{ scale: 0.95, rotate: '-1deg' }}
       className={`group relative min-h-[300px] cursor-pointer overflow-hidden rounded-2xl bg-zinc-800 border-zinc-700 border p-8 ${className}`}
       onClick={onClick}
     >
       {href ? (
-        <a href={href} target="_blank" rel="noopener noreferrer" className="">
+        <a href={href} target="_blank" rel="noopener noreferrer">
           {children}
         </a>
       ) : (
-        <>{children}</>
+        children
       )}
     </motion.div>
   );
