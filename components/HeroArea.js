@@ -70,7 +70,7 @@ const HeaderBlock = () => (
       />
     </div>
     <h1 className="mb-12 min-h-[6rem] text-4xl font-medium leading-tight">
-      Hi! I'm Alexi,{' '}
+      Hi! I&apos;m Alexi,{' '}
       <span className=" text-pink-300">
         I{' '}
         <Typewriter
@@ -102,10 +102,11 @@ const HeaderBlock = () => (
 const AboutBlock = () => (
   <Block className="col-span-12 text-2xl leading-snug">
     <p>
-      Ever since I was young, I've always wanted to learn how to code.{' '}
+      Ever since I was young, I&apos;ve always wanted to learn how to code.{' '}
       <span className="text-zinc-400">
-        It started when I was only 7, when I was introduced to programming. I'm now
-        a 17 year old, a first year college student taking CS in ADMU!
+        It started when I was only 7, when I was introduced to programming.
+        I&apos;m now a 17 year old, a first year college student taking CS in
+        ADMU!
       </span>
     </p>
   </Block>
