@@ -97,6 +97,20 @@ const HeaderBlock = () => (
     >
       <a href="mailto:alexicanamo@gmail.com">Reach out!</a> <FiArrowRight />
     </motion.p>
+    <motion.p
+      className="flex items-center gap-1 cursor-pointer"
+      whileHover={{
+        x: [0, 5, -5, 5, 0],
+        transition: {
+          duration: 0.6,
+          ease: 'easeInOut',
+          repeat: Infinity,
+        },
+      }}
+    >
+      <a href="https://old.alexi.life">Click here for the OG portfolio!</a>{' '}
+      <FiArrowRight />
+    </motion.p>
   </Block>
 );
 const AboutBlock = () => (
