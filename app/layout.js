@@ -1,5 +1,6 @@
 import localFont from 'next/font/local';
 import './globals.css';
+import Nav from '@/components/Nav';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
           src="https://static.cloudflareinsights.com/beacon.min.js"
           data-cf-beacon='{"token": "86ec04c4f2cb40658a18c7523aa83bc2"}'
         ></script>
+        <Nav />
         {children}
       </body>
     </html>

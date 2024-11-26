@@ -1,13 +1,78 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useSpring,
+} from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
 import { FiArrowRight } from 'react-icons/fi';
 import { SiGithub, SiInstagram, SiLinkedin, SiX } from 'react-icons/si';
 import Image from 'next/image';
 import Avatar from '@/assets/avatar.jpg';
 import { Typewriter } from 'react-simple-typewriter';
+import { Block } from './Block';
+
+const SPRING_OPTIONS = {
+  mass: 1.5,
+  stiffness: 500,
+  damping: 100,
+};
+
+const FancyButton = ({ children, href, className }) => {
+  const ref = useRef(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const xSpring = useSpring(x, SPRING_OPTIONS);
+  const ySpring = useSpring(y, SPRING_OPTIONS);
+  const transform = useMotionTemplate`translateX(${xSpring}px) translateY(${ySpring}px)`;
+
+  const handleMove = (e) => {
+    if (!ref.current) return;
+    const { height, width } = ref.current.getBoundingClientRect();
+    const { offsetX, offsetY } = e.nativeEvent;
+    const xPct = offsetX / width;
+    const yPct = 1 - offsetY / height;
+    const newY = 12 + yPct * 12;
+    const newX = 12 + xPct * 12;
+    x.set(newX);
+    y.set(-newY);
+  };
+
+  const handleReset = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <div className={twMerge('h-16 w-full bg-zinc-900', className)}>
+      <motion.a
+        href={href}
+        ref={ref}
+        style={{ transform }}
+        onMouseMove={handleMove}
+        onMouseLeave={handleReset}
+        onMouseDown={handleReset}
+        className="group flex h-full w-full items-center justify-between border border-zinc-700 bg-zinc-800 px-6 text-lg font-semibold"
+      >
+        <span className="relative overflow-hidden">
+          <span className="inline-block transition-transform duration-300 group-hover:-translate-y-full">
+            {children}
+          </span>
+          <span className="absolute left-0 top-0 block translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+            {children}
+          </span>
+        </span>
+        <div className="pointer-events-none flex h-6 w-6 overflow-hidden text-2xl">
+          <FiArrowRight className="shrink-0 -translate-x-full text-pink-500 transition-transform duration-300 group-hover:translate-x-0" />
+          <FiArrowRight className="shrink-0 -translate-x-full transition-transform duration-300 group-hover:translate-x-0" />
+        </div>
+      </motion.a>
+    </div>
+  );
+};
 
 const HeroArea = () => {
   return (
@@ -15,7 +80,7 @@ const HeroArea = () => {
       initial="initial"
       animate="animate"
       transition={{
-        staggerChildren: 0.2,
+        staggerChildren: 0.05,
       }}
       className="w-full mx-auto grid grid-flow-dense grid-cols-12 gap-4"
     >
@@ -27,36 +92,6 @@ const HeroArea = () => {
 };
 
 export default HeroArea;
-
-const Block = ({ className, ...rest }) => {
-  return (
-    <motion.div
-      variants={{
-        initial: {
-          scale: 0.5,
-          y: 50,
-          opacity: 0,
-        },
-        animate: {
-          scale: 1,
-          y: 0,
-          opacity: 1,
-        },
-      }}
-      transition={{
-        type: 'spring',
-        mass: 3,
-        stiffness: 400,
-        damping: 50,
-      }}
-      className={twMerge(
-        'col-span-4 rounded-lg border border-zinc-700 bg-zinc-800 p-6',
-        className
-      )}
-      {...rest}
-    />
-  );
-};
 
 const HeaderBlock = () => (
   <Block className="col-span-12 row-span-2 md:col-span-6">
@@ -84,45 +119,24 @@ const HeaderBlock = () => (
         ></Typewriter>
       </span>
     </h1>
-    <motion.p
-      className="flex items-center gap-1 cursor-pointer"
-      whileHover={{
-        x: [0, 5, -5, 5, 0],
-        transition: {
-          duration: 0.6,
-          ease: 'easeInOut',
-          repeat: Infinity,
-        },
-      }}
-    >
-      <a href="mailto:alexicanamo@gmail.com">Reach out!</a> <FiArrowRight />
-    </motion.p>
-    <motion.p
-      className="flex items-center gap-1 cursor-pointer"
-      whileHover={{
-        x: [0, 5, -5, 5, 0],
-        transition: {
-          duration: 0.6,
-          ease: 'easeInOut',
-          repeat: Infinity,
-        },
-      }}
-    >
-      <a href="https://old.alexi.life">Click here for the OG portfolio!</a>{' '}
-      <FiArrowRight />
-    </motion.p>
+    <div className="flex gap-4">
+      <FancyButton href="mailto:alexicanamo@gmail.com" className="flex-1">
+        Reach out!
+      </FancyButton>
+    </div>
   </Block>
 );
 const AboutBlock = () => (
   <Block className="col-span-12 text-2xl leading-snug">
     <p>
-      Ever since I was young, I&apos;ve always wanted to learn how to code.{' '}
+      I'm a 17 year old developer{' '}
       <span className="text-zinc-400">
-        It started when I was only 7, when I was introduced to programming.
-        I&apos;m now a 17 year old, a first year college student taking CS in
-        ADMU!
+        who loves building tools that solve real world problems!
       </span>
     </p>
+    <FancyButton href="/about" className="mt-5">
+      More about me!
+    </FancyButton>
   </Block>
 );
 const SocialsBlock = () => (

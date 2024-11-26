@@ -2,8 +2,7 @@
 import { DarkGridHero } from '@/components/DarkGrid';
 import HeroArea from '@/components/HeroArea';
 import { ProjectsArea } from '@/components/ProjectsArea';
-import RibbonLogos from '@/components/RibbonLogos';
-import SideStaggerNavigation from '@/components/SideStaggerNavigation';
+import TechStack from '@/components/TechStack';
 import Snowfall from 'react-snowfall';
 
 export default function Home() {
@@ -36,11 +35,9 @@ export default function Home() {
             id="ribbon-section"
             className="flex flex-col w-full justify-center min-h-[50vh]"
           >
-            <RibbonLogos />
+            <TechStack />
           </section>
         </DarkGridHero>
-
-        <SideStaggerNavigation />
       </div>
     </>
   );
