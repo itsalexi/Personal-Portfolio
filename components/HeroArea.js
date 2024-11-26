@@ -129,7 +129,7 @@ const HeaderBlock = () => (
 const AboutBlock = () => (
   <Block className="col-span-12 text-2xl leading-snug">
     <p>
-      I'm a 17 year old developer{' '}
+      I&apos;m a 17 year old developer{' '}
       <span className="text-zinc-400">
         who loves building tools that solve real world problems!
       </span>

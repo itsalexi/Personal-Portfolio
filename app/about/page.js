@@ -84,7 +84,7 @@ export default function AboutPage() {
           <Block delay={0.4}>
             <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
               <span className="inline-block w-4 h-4 rounded-full bg-green-500/10 ring-1 ring-green-500/20" />
-              What I'm up to now
+              What I&apos;m up to now
             </h2>
             <ul className="space-y-4 text-zinc-300">
               <li className="flex gap-2">
@@ -114,7 +114,6 @@ export default function AboutPage() {
             </ul>
           </Block>
 
-          {/* Interests Block */}
           <Block delay={0.5}>
             <h2 className="text-xl font-semibold text-white mb-4">
               Interests & Specialties
@@ -123,17 +122,16 @@ export default function AboutPage() {
               My journey has taken me from completing{' '}
               <span className="text-white">TheOdinProject</span> to building
               full-stack applications with{' '}
-              <span className="text-white">React and Next.js</span>. When I'm
-              not coding, I'm exploring new technologies or thinking up ways to
-              make student life easier. Having earned spots in all{' '}
-              <span className="text-white">Big 4 universities</span>, I chose
-              Ateneo to pursue my passion for creating meaningful tech
-              solutions. Between coursework and side projects, I'm constantly
-              pushing myself to learn and build more impactful tools.
+              <span className="text-white">React and Next.js</span>. When
+              I&apos;m not coding, I&apos;m exploring new technologies or
+              thinking up ways to make student life easier. Having earned spots
+              in all <span className="text-white">Big 4 universities</span>, I
+              chose Ateneo to pursue my passion for creating meaningful tech
+              solutions. Between coursework and side projects, I&apos;m
+              constantly pushing myself to learn and build more impactful tools.
             </p>
           </Block>
 
-          {/* Highlights Block */}
           <Block delay={0.6}>
             <h2 className="text-xl font-semibold text-white mb-4">
               Highlights
