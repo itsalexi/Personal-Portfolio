@@ -47,7 +47,7 @@ export default function AboutPage() {
             <h2 className="text-xl font-semibold text-white mb-4">Hello!</h2>
             <p className="text-zinc-300 leading-relaxed">
               I&apos;m <span className="text-white font-medium">Alexi</span>, a
-              17-year-old software developer who{' '}
+              18-year-old software developer who{' '}
               <span className="text-white font-medium">loves to code</span>! As
               a CS student at{' '}
               <span className="text-white font-medium">
