@@ -5,6 +5,7 @@ import TuitionFeeImg from '@/assets/TuitionFee.png';
 import GithubImg from '@/assets/Github.png';
 import SharespaceImg from '@/assets/sharespace.png';
 import DiscordImg from '@/assets/discord.png';
+import TedXImg from '@/assets/tedx.png';
 
 import Image from 'next/image';
 import {
@@ -160,6 +161,15 @@ export const ProjectsArea = () => {
       live: 'https://alexi.life/projects/discord-clone/',
       tech: ['HTML', 'CSS', 'React', 'Firebase', 'JavaScript'],
     },
+    TedX: {
+      image: TedXImg,
+      title: 'TedX AteneodeManilaU Website',
+      description:
+        'Helped lead a team of three developers to design and build the TEDxAteneoDeManilaU 2025 website, ensuring seamless navigation, modern aesthetics, and optimized performance.',
+      repo: 'https://github.com/itsalexi/TEDxADMU/',
+      live: 'https://tedxateneodemanilau.com',
+      tech: ['HTML', 'CSS', 'React', 'NextJS', 'mobilefriendly'],
+    },
   };
   const openModal = (projectKey) => {
     setModalContent(projectData[projectKey]);
@@ -193,6 +203,24 @@ export const ProjectsArea = () => {
           <span className="text-blue-600"> some of my projects!</span>
         </motion.h2>
       </motion.div>
+      <div className="mb-4 grid grid-cols-12 gap-4">
+        <BounceCard
+          className="col-span-12 md:col-span-12"
+          onClick={() => openModal('TedX')}
+        >
+          <CardTitle>TedX AteneoDeManilaU Website</CardTitle>
+          <p className="text-center">
+            The official website for TedX AteneoDeManilaU, featuring speaker profiles and event information!
+          </p>
+          <div className="absolute bottom-0 left-4 right-4 top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-violet-600 to-indigo-800 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
+            <Image
+              src={TedXImg}
+              alt="TedX AteneoDeManilaU Website"
+              className="w-full object-cover object-top rounded-t-2xl"
+            />
+          </div>
+        </BounceCard>
+      </div>
       <div className="mb-4 grid grid-cols-12 gap-4">
         <BounceCard
           className="col-span-12 md:col-span-4"
