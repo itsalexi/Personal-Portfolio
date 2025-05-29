@@ -188,6 +188,9 @@ export const ProjectsArea = () => {
         variants={itemVariants}
       >
         <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5 }}
           whileHover={{
             x: [0, 5, -5, 5, 0],
             transition: {
@@ -196,8 +199,7 @@ export const ProjectsArea = () => {
               repeat: Infinity,
             },
           }}
-          className="text-4xl font-bold md:text-5xl"
-          variants={itemVariants}
+          className="text-4xl font-bold md:text-5xl pt-10"
         >
           Check out
           <span className="text-blue-600"> some of my projects!</span>

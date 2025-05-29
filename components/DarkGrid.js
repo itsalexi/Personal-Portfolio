@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
@@ -10,7 +11,7 @@ export const DarkGridHero = ({ children, className }) => {
         <motion.div
           initial={{
             y: 25,
-            opacity: 0,
+            opacity: 1,
           }}
           animate={{
             y: 0,

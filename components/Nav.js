@@ -31,7 +31,7 @@ export default function Nav() {
       >
         <NavLink href="/">Home</NavLink>
         <NavLink href="/about">About</NavLink>
-        <NavButton href="https://old.alexi.life">Old Portfolio</NavButton>
+        <NavLink href="/blog">Blog</NavLink>
       </motion.nav>
     </div>
   );

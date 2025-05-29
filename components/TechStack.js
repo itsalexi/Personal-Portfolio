@@ -43,7 +43,10 @@ const TechStack = () => {
   return (
     <section className="w-full ">
       <motion.h2
-        animate={isInView ? 'show' : 'hidden'}
+        ref={titleRef}
+        initial={{ opacity: 0, y: 20 }}
+        animate={isTitleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.5 }}
         whileHover={{
           x: [0, 5, -5, 5, 0],
           transition: {
@@ -52,7 +55,7 @@ const TechStack = () => {
             repeat: Infinity,
           },
         }}
-        className="text-4xl font-bold md:text-5xl pb-10"
+        className="text-4xl font-bold md:text-5xl pb-10 pt-10"
       >
         Here&apos;s
         <span className="text-blue-600"> my tech stack!</span>
