@@ -2,6 +2,7 @@ import { client } from '@/lib/sanity'
 import { urlFor } from '@/lib/sanity'
 import BlogPostContent from './BlogPostContent'
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 // Add revalidate option
 export const revalidate = 60 // revalidate every 60 seconds
@@ -77,13 +78,13 @@ export default async function BlogPost({ params }) {
     return (
       <div className="container mx-auto px-4 py-16 max-w-3xl text-center">
         <h1 className="text-4xl font-bold text-white mb-4">Post Not Found</h1>
-        <p className="text-zinc-400 mb-8">The blog post you're looking for doesn't exist.</p>
-        <a
+        <p className="text-zinc-400 mb-8">The blog post you are looking for does not exist.</p>
+        <Link
           href="/blog"
           className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         >
           Back to Blog
-        </a>
+        </Link>
       </div>
     )
   }
