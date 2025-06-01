@@ -18,7 +18,7 @@ const geistMono = localFont({
 export const metadata = {
   metadataBase: new URL('https://alexi.life'),
   title: {
-    default: 'Alexi Canamo - Software Developer',
+    default: 'Alexi Canamo',
     template: '%s | Alexi Canamo'
   },
   description: "Alexi is a passionate 18-year-old software developer from the Philippines. He's a second-year college student in Ateneo, studying Computer Science.",
@@ -30,7 +30,7 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://alexi.life',
-    title: 'Alexi Canamo - Software Developer',
+    title: 'Alexi Canamo',
     description: "Alexi is a passionate 18-year-old software developer from the Philippines. He's a second-year college student in Ateneo, studying Computer Science.",
     siteName: 'Alexi Canamo Portfolio',
     images: [
@@ -38,19 +38,19 @@ export const metadata = {
         url: '/images/seo/og-image.jpg',
         width: 1200,
         height: 600,
-        alt: 'Alexi Canamo - Software Developer Portfolio',
+        alt: 'Alexi Canamo Portfolio',
         type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Alexi Canamo - Software Developer',
+    title: 'Alexi Canamo',
     description: "Alexi is a passionate 18-year-old software developer from the Philippines. He's a second-year college student in Ateneo, studying Computer Science.",
     creator: '@alexicanamo',
     images: [{
       url: '/images/seo/twitter-image.jpg',
-      alt: 'Alexi Canamo - Software Developer',
+      alt: 'Alexi Canamo',
       width: 1200,
       height: 600,
     }],
