@@ -3,6 +3,7 @@ import { urlFor } from '@/lib/sanity'
 import BlogPostContent from './BlogPostContent'
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Script from 'next/script'
 
 // Add revalidate option
 export const revalidate = 60 // revalidate every 60 seconds
@@ -15,7 +16,15 @@ async function getPost(slug) {
     publishedAt,
     mainImage,
     excerpt,
-    body
+    body,
+    categories[]->{
+      title
+    },
+    author->{
+      name,
+      image
+    },
+    _updatedAt
   }`
   return client.fetch(query, { slug })
 }
@@ -33,7 +42,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const post = await getPost(params.slug)
+  const resolvedParams = await params
+  const post = await getPost(resolvedParams.slug)
   
   if (!post) {
     return {
@@ -72,7 +82,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function BlogPost({ params }) {
-  const post = await getPost(params.slug)
+  const resolvedParams = await params
+  const post = await getPost(resolvedParams.slug)
 
   if (!post) {
     return (
@@ -89,5 +100,69 @@ export default async function BlogPost({ params }) {
     )
   }
 
-  return <BlogPostContent post={post} />
+  const imageUrl = post.mainImage ? urlFor(post.mainImage).url() : null
+  const postUrl = `https://alexi.life/blog/${post.slug.current}`
+
+  return (
+    <>
+      <Script
+        id="blog-post-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': postUrl
+            },
+            headline: post.title,
+            description: post.excerpt,
+            image: imageUrl ? {
+              '@type': 'ImageObject',
+              url: imageUrl,
+              width: 1200,
+              height: 630
+            } : undefined,
+            datePublished: post.publishedAt,
+            dateModified: post._updatedAt || post.publishedAt,
+            author: {
+              '@type': 'Person',
+              name: post.author?.name || 'Alexi Canamo',
+              url: 'https://alexi.life',
+              image: post.author?.image ? urlFor(post.author.image).url() : undefined
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Alexi Canamo',
+              url: 'https://alexi.life',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://alexi.life/images/seo/profile.jpg',
+                width: 400,
+                height: 400
+              }
+            },
+            keywords: post.categories?.map(cat => cat.title).join(', ') || 'software development, technology',
+            articleBody: post.body,
+            inLanguage: 'en-US',
+            isAccessibleForFree: true,
+            wordCount: post.body?.length || 0,
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['article', 'h1', 'h2', 'h3', 'p']
+            },
+            articleSection: post.categories?.[0]?.title || 'Technology',
+            educationalLevel: 'Beginner',
+            educationalUse: 'Self-Study',
+            audience: {
+              '@type': 'Audience',
+              audienceType: 'Software Developers'
+            }
+          })
+        }}
+      />
+      <BlogPostContent post={post} />
+    </>
+  )
 } 

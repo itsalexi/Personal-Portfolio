@@ -182,6 +182,8 @@ export const ProjectsArea = () => {
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
       variants={containerVariants}
+      id="projects"
+      className="scroll-mt-20"
     >
       <motion.div
         className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:px-8"

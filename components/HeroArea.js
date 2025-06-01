@@ -100,8 +100,11 @@ const HeaderBlock = () => (
         src={Avatar}
         alt="avatar"
         className="rounded-full"
-        layout="fill"
-        objectFit="cover"
+        fill
+        sizes="(max-width: 768px) 56px, 56px"
+        priority={true}
+        loading="eager"
+        style={{ objectFit: 'cover' }}
       />
     </div>
     <h1 className="mb-12 min-h-[6rem] text-4xl font-medium leading-tight">
@@ -191,7 +194,7 @@ const SocialsBlock = () => (
       className="col-span-6 bg-gray-800 md:col-span-3"
     >
       <a
-        href="https://x.com/itsAlexiTW"
+        href="https://x.com/alexicanamo"
         className="grid h-full place-content-center text-3xl text-white"
       >
         <SiX />

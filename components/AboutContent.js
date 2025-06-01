@@ -21,8 +21,9 @@ export function AboutContent() {
               src={Avatar}
               alt="Profile"
               fill
+              sizes="(max-width: 768px) 128px, 128px"
+              loading="lazy"
               className="object-cover"
-              priority
             />
           </div>
         </div>
