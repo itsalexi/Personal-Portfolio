@@ -19,10 +19,22 @@ export const metadata = {
   metadataBase: new URL('https://alexi.life'),
   title: {
     default: 'Alexi Canamo',
-    template: '%s | Alexi Canamo'
+    template: '%s | Alexi Canamo',
   },
-  description: "Alexi is a passionate 18-year-old software developer from the Philippines. He's a second-year college student in Ateneo, studying Computer Science.",
-  keywords: ['software developer', 'web developer', 'Philippines', 'Computer Science', 'Ateneo', 'portfolio', 'full-stack developer', 'React', 'Next.js', 'JavaScript'],
+  description:
+    "Alexi is a passionate 18-year-old software developer from the Philippines. He's a second-year college student in Ateneo, studying Computer Science.",
+  keywords: [
+    'software developer',
+    'web developer',
+    'Philippines',
+    'Computer Science',
+    'Ateneo',
+    'portfolio',
+    'full-stack developer',
+    'React',
+    'Next.js',
+    'JavaScript',
+  ],
   authors: [{ name: 'Alexi Canamo' }],
   creator: 'Alexi Canamo',
   publisher: 'Alexi Canamo',
@@ -31,7 +43,8 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://alexi.life',
     title: 'Alexi Canamo',
-    description: "Alexi is a passionate 18-year-old software developer from the Philippines. He's a second-year college student in Ateneo, studying Computer Science.",
+    description:
+      "Alexi is a passionate 18-year-old software developer from the Philippines. He's a second-year college student in Ateneo, studying Computer Science.",
     siteName: 'Alexi Canamo Portfolio',
     images: [
       {
@@ -46,14 +59,17 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Alexi Canamo',
-    description: "Alexi is a passionate 18-year-old software developer from the Philippines. He's a second-year college student in Ateneo, studying Computer Science.",
+    description:
+      "Alexi is a passionate 18-year-old software developer from the Philippines. He's a second-year college student in Ateneo, studying Computer Science.",
     creator: '@alexicanamo',
-    images: [{
-      url: '/images/seo/twitter-image.jpg',
-      alt: 'Alexi Canamo',
-      width: 1200,
-      height: 600,
-    }],
+    images: [
+      {
+        url: '/images/seo/twitter-image.jpg',
+        alt: 'Alexi Canamo',
+        width: 1200,
+        height: 600,
+      },
+    ],
   },
   robots: {
     index: true,
@@ -65,9 +81,6 @@ export const metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  alternates: {
-    canonical: 'https://alexi.life',
   },
 };
 
@@ -85,7 +98,8 @@ export default function RootLayout({ children }) {
               name: 'Alexi Canamo',
               url: 'https://alexi.life',
               jobTitle: 'Software Developer',
-              description: "Alexi is a passionate 18-year-old software developer from the Philippines. He's a second-year college student in Ateneo, studying Computer Science.",
+              description:
+                "Alexi is a passionate 18-year-old software developer from the Philippines. He's a second-year college student in Ateneo, studying Computer Science.",
               alumniOf: {
                 '@type': 'CollegeOrUniversity',
                 name: 'Ateneo de Manila University',
@@ -94,8 +108,8 @@ export default function RootLayout({ children }) {
                   '@type': 'PostalAddress',
                   addressCountry: 'PH',
                   addressLocality: 'Quezon City',
-                  addressRegion: 'Metro Manila'
-                }
+                  addressRegion: 'Metro Manila',
+                },
               },
               knowsAbout: [
                 'Software Development',
@@ -103,12 +117,12 @@ export default function RootLayout({ children }) {
                 'Computer Science',
                 'React',
                 'Next.js',
-                'JavaScript'
+                'JavaScript',
               ],
               knowsLanguage: ['English', 'Filipino'],
               nationality: {
                 '@type': 'Country',
-                name: 'Philippines'
+                name: 'Philippines',
               },
               sameAs: [
                 'https://github.com/itsalexi',
@@ -117,22 +131,24 @@ export default function RootLayout({ children }) {
                 'https://www.facebook.com/alexirothluis.canamo',
                 'https://ko-fi.com/itsalexi',
                 'https://x.com/alexicanamo',
+                'https://www.amazon.com/author/alexicanamo',
+                'https://www.crunchbase.com/person/alexi-canamo',
               ],
               image: {
                 '@type': 'ImageObject',
                 url: '/images/seo/profile.jpg',
                 width: 400,
                 height: 400,
-                caption: 'Alexi Canamo - Software Developer'
+                caption: 'Alexi Canamo - Software Developer',
               },
               mainEntityOfPage: {
                 '@type': 'WebPage',
-                '@id': 'https://alexi.life'
+                '@id': 'https://alexi.life',
               },
               worksFor: {
                 '@type': 'Organization',
                 name: 'Software Developer',
-                url: 'https://alexi.life'
+                url: 'https://alexi.life',
               },
               hasCredential: {
                 '@type': 'EducationalCredential',
@@ -140,17 +156,17 @@ export default function RootLayout({ children }) {
                 educationalLevel: 'Bachelor',
                 about: {
                   '@type': 'Thing',
-                  name: 'Computer Science'
-                }
+                  name: 'Computer Science',
+                },
               },
               memberOf: [
                 {
                   '@type': 'Organization',
                   name: 'Computer Society of the Ateneo',
-                  url: 'https://compsat.org'
-                }
-              ]
-            })
+                  url: 'https://compsat.org',
+                },
+              ],
+            }),
           }}
         />
         <Script
@@ -162,21 +178,22 @@ export default function RootLayout({ children }) {
               '@type': 'WebSite',
               name: 'Alexi Canamo',
               url: 'https://alexi.life',
-              description: "Alexi is a passionate 18-year-old software developer from the Philippines. He's a second-year college student in Ateneo, studying Computer Science.",
+              description:
+                "Alexi is a passionate 18-year-old software developer from the Philippines. He's a second-year college student in Ateneo, studying Computer Science.",
               potentialAction: {
                 '@type': 'SearchAction',
                 target: 'https://alexi.life/search?q={search_term_string}',
-                'query-input': 'required name=search_term_string'
+                'query-input': 'required name=search_term_string',
               },
               publisher: {
                 '@type': 'Person',
                 name: 'Alexi Canamo',
-                jobTitle: 'Software Developer'
+                jobTitle: 'Software Developer',
               },
               inLanguage: 'en-US',
               isAccessibleForFree: true,
-              license: 'https://creativecommons.org/licenses/by/4.0/'
-            })
+              license: 'https://creativecommons.org/licenses/by/4.0/',
+            }),
           }}
         />
         <Script
@@ -191,16 +208,16 @@ export default function RootLayout({ children }) {
                   '@type': 'ListItem',
                   position: 1,
                   name: 'Home',
-                  item: 'https://alexi.life'
+                  item: 'https://alexi.life',
                 },
                 {
                   '@type': 'ListItem',
                   position: 2,
                   name: 'Blog',
-                  item: 'https://alexi.life/blog'
-                }
-              ]
-            })
+                  item: 'https://alexi.life/blog',
+                },
+              ],
+            }),
           }}
         />
         <Script
@@ -210,7 +227,7 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'ItemList',
-              name: 'Alexi Canamo\'s Projects',
+              name: "Alexi Canamo's Projects",
               description: 'Software development projects and portfolio',
               url: 'https://alexi.life/#projects',
               itemListElement: [
@@ -221,19 +238,26 @@ export default function RootLayout({ children }) {
                   operatingSystem: 'Web',
                   author: {
                     '@type': 'Person',
-                    name: 'Alexi Canamo'
+                    name: 'Alexi Canamo',
                   },
-                  description: 'Helped lead a team of three developers to design and build the TEDxAteneoDeManilaU 2025 website, ensuring seamless navigation, modern aesthetics, and optimized performance.',
+                  description:
+                    'Helped lead a team of three developers to design and build the TEDxAteneoDeManilaU 2025 website, ensuring seamless navigation, modern aesthetics, and optimized performance.',
                   url: 'https://tedxateneodemanilau.com',
                   codeRepository: 'https://github.com/itsalexi/TEDxADMU/',
-                  technologies: ['HTML', 'CSS', 'React', 'NextJS', 'mobilefriendly'],
+                  technologies: [
+                    'HTML',
+                    'CSS',
+                    'React',
+                    'NextJS',
+                    'mobilefriendly',
+                  ],
                   screenshot: {
                     '@type': 'ImageObject',
                     url: 'https://alexi.life/assets/tedx.png',
                     width: 1200,
                     height: 630,
-                    caption: 'TedX AteneoDeManilaU Website Screenshot'
-                  }
+                    caption: 'TedX AteneoDeManilaU Website Screenshot',
+                  },
                 },
                 {
                   '@type': 'SoftwareApplication',
@@ -242,19 +266,26 @@ export default function RootLayout({ children }) {
                   operatingSystem: 'Web',
                   author: {
                     '@type': 'Person',
-                    name: 'Alexi Canamo'
+                    name: 'Alexi Canamo',
                   },
-                  description: 'A simple easy to use QPI calculator, import your grades, or select your course to be able to calculate your grades fast!',
+                  description:
+                    'A simple easy to use QPI calculator, import your grades, or select your course to be able to calculate your grades fast!',
                   url: 'https://qpi.alexi.life',
                   codeRepository: 'https://github.com/itsalexi/ADMU-QPI',
-                  technologies: ['HTML', 'CSS', 'React', 'NextJS', 'mobilefriendly'],
+                  technologies: [
+                    'HTML',
+                    'CSS',
+                    'React',
+                    'NextJS',
+                    'mobilefriendly',
+                  ],
                   screenshot: {
                     '@type': 'ImageObject',
                     url: 'https://alexi.life/assets/QPICalc.png',
                     width: 1200,
                     height: 630,
-                    caption: 'Ateneo QPI Calculator Screenshot'
-                  }
+                    caption: 'Ateneo QPI Calculator Screenshot',
+                  },
                 },
                 {
                   '@type': 'SoftwareApplication',
@@ -263,19 +294,27 @@ export default function RootLayout({ children }) {
                   operatingSystem: 'Web',
                   author: {
                     '@type': 'Person',
-                    name: 'Alexi Canamo'
+                    name: 'Alexi Canamo',
                   },
-                  description: 'An easy way to find available classes and build your schedule in Ateneo. Browse courses, apply filters, and create your ideal timetable with the Ateneo Enlistment Helper!',
+                  description:
+                    'An easy way to find available classes and build your schedule in Ateneo. Browse courses, apply filters, and create your ideal timetable with the Ateneo Enlistment Helper!',
                   url: 'https://schedule.alexi.life',
-                  codeRepository: 'https://github.com/itsalexi/Ateneo-Enlistment',
-                  technologies: ['HTML', 'CSS', 'React', 'NextJS', 'mobilefriendly'],
+                  codeRepository:
+                    'https://github.com/itsalexi/Ateneo-Enlistment',
+                  technologies: [
+                    'HTML',
+                    'CSS',
+                    'React',
+                    'NextJS',
+                    'mobilefriendly',
+                  ],
                   screenshot: {
                     '@type': 'ImageObject',
                     url: 'https://alexi.life/assets/EnlistmentHelper.jpg',
                     width: 1200,
                     height: 630,
-                    caption: 'Ateneo Enlistment Helper Screenshot'
-                  }
+                    caption: 'Ateneo Enlistment Helper Screenshot',
+                  },
                 },
                 {
                   '@type': 'SoftwareApplication',
@@ -284,19 +323,26 @@ export default function RootLayout({ children }) {
                   operatingSystem: 'Web',
                   author: {
                     '@type': 'Person',
-                    name: 'Alexi Canamo'
+                    name: 'Alexi Canamo',
                   },
-                  description: 'Easily estimate and see how much your tuition will cost at Ateneo with this very intuitive and user friendly web-app.',
+                  description:
+                    'Easily estimate and see how much your tuition will cost at Ateneo with this very intuitive and user friendly web-app.',
                   url: 'https://tuition.alexi.life',
                   codeRepository: 'https://github.com/itsalexi/Ateneo-Tuition',
-                  technologies: ['HTML', 'CSS', 'React', 'NextJS', 'mobilefriendly'],
+                  technologies: [
+                    'HTML',
+                    'CSS',
+                    'React',
+                    'NextJS',
+                    'mobilefriendly',
+                  ],
                   screenshot: {
                     '@type': 'ImageObject',
                     url: 'https://alexi.life/assets/TuitionFee.png',
                     width: 1200,
                     height: 630,
-                    caption: 'Ateneo Tuition Fee Viewer Screenshot'
-                  }
+                    caption: 'Ateneo Tuition Fee Viewer Screenshot',
+                  },
                 },
                 {
                   '@type': 'SoftwareApplication',
@@ -305,19 +351,27 @@ export default function RootLayout({ children }) {
                   operatingSystem: 'Web',
                   author: {
                     '@type': 'Person',
-                    name: 'Alexi Canamo'
+                    name: 'Alexi Canamo',
                   },
-                  description: 'A social media blogging platform like Medium and Dev.to! You have the ability to like, share, comment on every post!',
+                  description:
+                    'A social media blogging platform like Medium and Dev.to! You have the ability to like, share, comment on every post!',
                   url: 'https://sharespace.alexi.life',
                   codeRepository: 'https://github.com/itsalexi/Sharespace',
-                  technologies: ['HTML', 'CSS', 'React', 'Firebase', 'NextJS', 'mobilefriendly'],
+                  technologies: [
+                    'HTML',
+                    'CSS',
+                    'React',
+                    'Firebase',
+                    'NextJS',
+                    'mobilefriendly',
+                  ],
                   screenshot: {
                     '@type': 'ImageObject',
                     url: 'https://alexi.life/assets/sharespace.png',
                     width: 1200,
                     height: 630,
-                    caption: 'Sharespace Screenshot'
-                  }
+                    caption: 'Sharespace Screenshot',
+                  },
                 },
                 {
                   '@type': 'SoftwareApplication',
@@ -326,22 +380,29 @@ export default function RootLayout({ children }) {
                   operatingSystem: 'Web',
                   author: {
                     '@type': 'Person',
-                    name: 'Alexi Canamo'
+                    name: 'Alexi Canamo',
                   },
-                  description: 'A discord clone with full authentication and realtime chat messaging powered by Firebase. Login/Register pages are mobile-friendly, but the main application is not.',
+                  description:
+                    'A discord clone with full authentication and realtime chat messaging powered by Firebase. Login/Register pages are mobile-friendly, but the main application is not.',
                   url: 'https://alexi.life/projects/discord-clone/',
                   codeRepository: 'https://github.com/itsalexi/Discord-Clone/',
-                  technologies: ['HTML', 'CSS', 'React', 'Firebase', 'JavaScript'],
+                  technologies: [
+                    'HTML',
+                    'CSS',
+                    'React',
+                    'Firebase',
+                    'JavaScript',
+                  ],
                   screenshot: {
                     '@type': 'ImageObject',
                     url: 'https://alexi.life/assets/discord.png',
                     width: 1200,
                     height: 630,
-                    caption: 'Discord Clone Screenshot'
-                  }
-                }
-              ]
-            })
+                    caption: 'Discord Clone Screenshot',
+                  },
+                },
+              ],
+            }),
           }}
         />
         <Script
@@ -351,8 +412,9 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Blog',
-              name: 'Alexi Canamo\'s Blog',
-              description: 'Technical articles and thoughts about software development',
+              name: "Alexi Canamo's Blog",
+              description:
+                'Technical articles and thoughts about software development',
               url: 'https://alexi.life/blog',
               author: {
                 '@type': 'Person',
@@ -365,13 +427,13 @@ export default function RootLayout({ children }) {
                   'Computer Science',
                   'React',
                   'Next.js',
-                  'JavaScript'
-                ]
+                  'JavaScript',
+                ],
               },
               publisher: {
                 '@type': 'Person',
                 name: 'Alexi Canamo',
-                url: 'https://alexi.life'
+                url: 'https://alexi.life',
               },
               inLanguage: 'en-US',
               isAccessibleForFree: true,
@@ -379,22 +441,23 @@ export default function RootLayout({ children }) {
                 '@type': 'BlogPosting',
                 mainEntityOfPage: {
                   '@type': 'WebPage',
-                  '@id': 'https://alexi.life/blog'
+                  '@id': 'https://alexi.life/blog',
                 },
                 headline: 'Blog Posts',
-                description: 'Technical articles and thoughts about software development',
+                description:
+                  'Technical articles and thoughts about software development',
                 author: {
                   '@type': 'Person',
-                  name: 'Alexi Canamo'
+                  name: 'Alexi Canamo',
                 },
                 publisher: {
                   '@type': 'Person',
-                  name: 'Alexi Canamo'
+                  name: 'Alexi Canamo',
                 },
                 isAccessibleForFree: true,
-                inLanguage: 'en-US'
-              }
-            })
+                inLanguage: 'en-US',
+              },
+            }),
           }}
         />
         <Script
@@ -404,8 +467,9 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'ItemList',
-              name: 'Alexi Canamo\'s Tech Stack',
-              description: 'Technologies and tools used in software development',
+              name: "Alexi Canamo's Tech Stack",
+              description:
+                'Technologies and tools used in software development',
               itemListElement: [
                 {
                   '@type': 'ListItem',
@@ -413,8 +477,8 @@ export default function RootLayout({ children }) {
                   item: {
                     '@type': 'TechArticle',
                     name: 'JavaScript',
-                    description: 'Programming language for web development'
-                  }
+                    description: 'Programming language for web development',
+                  },
                 },
                 {
                   '@type': 'ListItem',
@@ -422,8 +486,9 @@ export default function RootLayout({ children }) {
                   item: {
                     '@type': 'TechArticle',
                     name: 'React',
-                    description: 'JavaScript library for building user interfaces'
-                  }
+                    description:
+                      'JavaScript library for building user interfaces',
+                  },
                 },
                 {
                   '@type': 'ListItem',
@@ -431,8 +496,8 @@ export default function RootLayout({ children }) {
                   item: {
                     '@type': 'TechArticle',
                     name: 'Node.js',
-                    description: 'JavaScript runtime environment'
-                  }
+                    description: 'JavaScript runtime environment',
+                  },
                 },
                 {
                   '@type': 'ListItem',
@@ -440,8 +505,8 @@ export default function RootLayout({ children }) {
                   item: {
                     '@type': 'TechArticle',
                     name: 'Next.js',
-                    description: 'React framework for production'
-                  }
+                    description: 'React framework for production',
+                  },
                 },
                 {
                   '@type': 'ListItem',
@@ -449,8 +514,9 @@ export default function RootLayout({ children }) {
                   item: {
                     '@type': 'TechArticle',
                     name: 'Python',
-                    description: 'Programming language for general-purpose programming'
-                  }
+                    description:
+                      'Programming language for general-purpose programming',
+                  },
                 },
                 {
                   '@type': 'ListItem',
@@ -458,8 +524,8 @@ export default function RootLayout({ children }) {
                   item: {
                     '@type': 'TechArticle',
                     name: 'MongoDB',
-                    description: 'NoSQL database'
-                  }
+                    description: 'NoSQL database',
+                  },
                 },
                 {
                   '@type': 'ListItem',
@@ -467,8 +533,8 @@ export default function RootLayout({ children }) {
                   item: {
                     '@type': 'TechArticle',
                     name: 'PostgreSQL',
-                    description: 'Relational database management system'
-                  }
+                    description: 'Relational database management system',
+                  },
                 },
                 {
                   '@type': 'ListItem',
@@ -476,8 +542,8 @@ export default function RootLayout({ children }) {
                   item: {
                     '@type': 'TechArticle',
                     name: 'Docker',
-                    description: 'Container platform'
-                  }
+                    description: 'Container platform',
+                  },
                 },
                 {
                   '@type': 'ListItem',
@@ -485,8 +551,8 @@ export default function RootLayout({ children }) {
                   item: {
                     '@type': 'TechArticle',
                     name: 'TailwindCSS',
-                    description: 'Utility-first CSS framework'
-                  }
+                    description: 'Utility-first CSS framework',
+                  },
                 },
                 {
                   '@type': 'ListItem',
@@ -494,8 +560,9 @@ export default function RootLayout({ children }) {
                   item: {
                     '@type': 'TechArticle',
                     name: 'Vercel',
-                    description: 'Cloud platform for static sites and Serverless Functions'
-                  }
+                    description:
+                      'Cloud platform for static sites and Serverless Functions',
+                  },
                 },
                 {
                   '@type': 'ListItem',
@@ -503,8 +570,8 @@ export default function RootLayout({ children }) {
                   item: {
                     '@type': 'TechArticle',
                     name: 'Firebase',
-                    description: 'App development platform'
-                  }
+                    description: 'App development platform',
+                  },
                 },
                 {
                   '@type': 'ListItem',
@@ -512,24 +579,24 @@ export default function RootLayout({ children }) {
                   item: {
                     '@type': 'TechArticle',
                     name: 'Git',
-                    description: 'Version control system'
-                  }
-                }
-              ]
-            })
+                    description: 'Version control system',
+                  },
+                },
+              ],
+            }),
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <script
           defer
           src="https://static.cloudflareinsights.com/beacon.min.js"
           data-cf-beacon='{"token": "86ec04c4f2cb40658a18c7523aa83bc2"}'
         ></script>
         <Nav />
-        <DarkGridHero className="min-h-screen">
-          {children}
-        </DarkGridHero>
+        <DarkGridHero className="min-h-screen">{children}</DarkGridHero>
       </body>
     </html>
   );
